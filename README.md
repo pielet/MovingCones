@@ -1,7 +1,7 @@
 Efficient Cones
 ===
 
-This is a C++ implementation of the piecewise developable approximation in the following paper:
+This is a C++ implementation of the cone singularity construction in the following paper:
 
 [Efficient Cone Singularity Construction for Conformal Parameterizations](https://doi.org/10.1145/3618407).
 Mo Li, [Qing Fang](https://qingfang1208.github.io/), Zheng Zhang, [Ligang Liu](http://staff.ustc.edu.cn/~lgliu/), [Xiao-Ming Fu](https://ustc-gcl-f.github.io/).
