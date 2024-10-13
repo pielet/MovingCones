@@ -27,8 +27,8 @@ include_directories(${OPENMESH_INCLUDE_DIRS})
 # Find CHOLMOD
 find_package(CHOLMOD REQUIRED)
 if (CHOLMOD_FOUND)
-    message(STATUS "CHOLMOD found")
     include_directories(${CHOLMOD_INCLUDE_DIR})
 endif()
 
-target_link_libraries(${PROJECT_NAME} PUBLIC Eigen3::Eigen OpenMeshCore OpenMeshTools ${CHOLMOD_LIBRARIES} ${PROJECT_NAME}_lib)
+target_link_libraries(${PROJECT_NAME}_lib PUBLIC Eigen3::Eigen OpenMeshCore OpenMeshTools SuiteSparse::CHOLMOD)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${PROJECT_NAME}_lib)

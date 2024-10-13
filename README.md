@@ -17,13 +17,13 @@ Mo Li, [Qing Fang](https://qingfang1208.github.io/), Zheng Zhang, [Ligang Liu](h
 ```bash
 git clone --recursive git@github.com:pielet/MovingCones.git
 ```
-After cloning the repo, build and install openmesh and cholmod seperatly. Then
+After cloning the repo, build and install cholmod seperatly. Then
 
 ```bash
 mkdir build && cd build
 cmake ..
 make
-./ConeGenes [INPUT_OBJ] [OUTPUT_PATH] [INPUT_DISTORTION_BOUND]
+./MovingCones [INPUT_OBJ] [OUTPUT_PATH] [INPUT_DISTORTION_BOUND]
 ```
 Command arguments:
 * [INPUT_OBJ]: a input mesh (.obj).
