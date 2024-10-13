@@ -1,6 +1,6 @@
 [submodule "OpenMesh"]
-    path = OpenMesh
-    url = https://gitlab.vci.rwth-aachen.de:9000/OpenMesh/OpenMesh.git
+	path = OpenMesh
+	url = https://gitlab.vci.rwth-aachen.de:9000/OpenMesh/OpenMesh.git
 [submodule "SuiteSparse"]
-    path = SuiteSparse
-    url = https://github.com/DrTimothyAldenDavis/SuiteSparse.git
+	path = SuiteSparse
+	url = https://github.com/DrTimothyAldenDavis/SuiteSparse.git

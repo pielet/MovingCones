@@ -7,17 +7,23 @@ This is a C++ implementation of the cone singularity construction in the followi
 Mo Li, [Qing Fang](https://qingfang1208.github.io/), Zheng Zhang, [Ligang Liu](http://staff.ustc.edu.cn/~lgliu/), [Xiao-Ming Fu](https://ustc-gcl-f.github.io/).
 *ACM Transactions on Graphics (SIGGRAPH Asia)*, 42(6), 2023.
 
-The code is written by using Microsoft Visual Studio 2017.
-
 ## Dependencies
 * [OpenMesh](https://www.graphics.rwth-aachen.de/software/openmesh/)
 * [Eigen](http://eigen.tuxfamily.org/)
 * [SuiteSparse](https://people.engr.tamu.edu/davis/suitesparse.html)
 
-## Usage
-* A generated .exe file is included in ```x64/Release```, and run with:
+## Quick Start
+
+```bash
+git clone --recursive git@github.com:pielet/MovingCones.git
 ```
-ConeGenes.exe [INPUT_OBJ] [OUTPUT_PATH] [INPUT_DISTORTION_BOUND]
+After cloning the repo, build and install openmesh and cholmod seperatly. Then
+
+```bash
+mkdir build && cd build
+cmake ..
+make
+./ConeGenes [INPUT_OBJ] [OUTPUT_PATH] [INPUT_DISTORTION_BOUND]
 ```
 Command arguments:
 * [INPUT_OBJ]: a input mesh (.obj).
