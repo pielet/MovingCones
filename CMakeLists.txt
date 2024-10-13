@@ -21,12 +21,8 @@ add_executable(${PROJECT_NAME} "${CMAKE_SOURCE_DIR}/src/main.cpp")
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
-# Find OpenMesh
-find_package(OpenMesh REQUIRED)
-if (OPENMESH_FOUND)
-    message(STATUS "OpenMesh found")
-    include_directories(${OPENMESH_INCLUDE_DIRS})
-endif()
+add_subdirectory(OpenMesh)
+include_directories(${OPENMESH_INCLUDE_DIRS})
 
 # Find CHOLMOD
 find_package(CHOLMOD REQUIRED)
@@ -35,4 +31,4 @@ if (CHOLMOD_FOUND)
     include_directories(${CHOLMOD_INCLUDE_DIR})
 endif()
 
-target_link_libraries(${PROJECT_NAME} PUBLIC Eigen3::Eigen ${OPENMESH_LIBRARIES} SuiteSparse::CHOLMOD_static SuiteSparse::SuiteSparseConfig ${PROJECT_NAME}_lib)
+target_link_libraries(${PROJECT_NAME} PUBLIC Eigen3::Eigen OpenMeshCore OpenMeshTools ${CHOLMOD_LIBRARIES} ${PROJECT_NAME}_lib)
