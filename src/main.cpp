@@ -36,13 +36,14 @@ void parseArgs(int argc, const char* argv[], std::string& objPath, std::string& 
 		// input and/or output path not specified
 		printHelp(argv[0]);
 		exit(EXIT_FAILURE);
-
 	}
 	else {
 		// parse arguments
 		objPath = argv[1];
 		conesPath = argv[2];
-		distortion = std::stod(argv[3]);
+		distortion = 0.2;
+		if (argc > 3)
+			distortion = std::stod(argv[3]);
 	}
 }
 
@@ -58,7 +59,8 @@ void saveCones(const std::vector<double>& conesK, std::string conesPath, Mesh& m
 	for (int i = 0; i < conesK.size(); ++i)
 	{
 		if ((conesK[i] > -eps && conesK[i] < eps)||mesh.is_boundary(mesh.vertex_handle(i))) continue;
-		conesFile << i + 1 << " " << conesK[i] << std::endl;
+		// conesFile << i << " " << conesK[i] << std::endl;
+		conesFile << i << " ";
 	}
 	conesFile.close();
 }
